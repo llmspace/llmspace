@@ -1,0 +1,44 @@
+name: leaderboard
+
+# Regenerates the Solvers block in README.md from SOLVERS.md.
+#
+# Runs whenever SOLVERS.md changes on main — i.e. the moment a solver's pull
+# request is merged. Nothing here needs to be triggered or maintained by hand.
+#
+# Writes plain text into README.md rather than producing a badge image on
+# purpose: GitHub proxies README images through Camo, which caches hard enough
+# that a badge can show a stale count for hours. Text re-renders immediately.
+
+on:
+  push:
+    branches: [main]
+    paths: ['SOLVERS.md']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: leaderboard
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render leaderboard into README
+        run: node .github/scripts/leaderboard.js
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md unchanged — nothing to commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: update leaderboard from SOLVERS.md"
+          git push

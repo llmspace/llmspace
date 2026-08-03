@@ -1,0 +1,122 @@
+name: verify-solver
+
+# Verifies solver leaderboard pull requests and merges them with zero human
+# involvement.
+#
+# This runs on pull_request_target, which grants write permissions and runs
+# workflow code from the BASE branch — never from the PR head. That is load
+# bearing: PR content here is hostile data by default. This workflow must
+# NEVER check out, execute, or build anything from the PR head; it only
+# reads PR metadata through `gh api` into a JSON file, and every PR-derived
+# value flows through that file, not through ${{ }} interpolation in a
+# run: step (the sole exception is the PR number, which is a GitHub-assigned
+# integer, not attacker text).
+#
+# Verification logic itself lives in .github/scripts/verify-solver.js, which
+# is checked out from the base branch, so a PR cannot alter the rules used
+# to judge it.
+#
+# Because merges performed with GITHUB_TOKEN do not trigger other workflows,
+# this workflow also rebuilds the README leaderboard block itself after a
+# successful merge, rather than relying on leaderboard.yml to fire.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: verify-solver
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      # Base branch only. Never actions/checkout with ref: the PR head.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Gather PR data via gh api
+        env:
+          REPO: ${{ github.repository }}
+        run: |
+          export PR_NUMBER="${{ github.event.pull_request.number }}"
+          gh api "repos/${REPO}/pulls/${PR_NUMBER}" \
+            --jq '{authorLogin: .user.login, createdAt: .created_at}' \
+            > /tmp/pr-meta.json
+          gh api "repos/${REPO}/pulls/${PR_NUMBER}/files" --paginate \
+            --jq '[.[] | {filename, status, additions, deletions, patch}]' \
+            > /tmp/pr-files.json
+          node -e '
+            const fs = require("fs");
+            const meta = JSON.parse(fs.readFileSync("/tmp/pr-meta.json", "utf8"));
+            const files = JSON.parse(fs.readFileSync("/tmp/pr-files.json", "utf8"));
+            const solversContent = fs.readFileSync("SOLVERS.md", "utf8");
+            const number = Number(process.env.PR_NUMBER);
+            fs.writeFileSync(
+              "/tmp/verify-input.json",
+              JSON.stringify({ number, ...meta, files, solversContent }),
+            );
+          '
+
+      - name: Run verifier
+        id: verify
+        run: |
+          set +e
+          node .github/scripts/verify-solver.js /tmp/verify-input.json > /tmp/verdict.json
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat /tmp/verdict.json
+          node -e '
+            const fs = require("fs");
+            const v = JSON.parse(fs.readFileSync("/tmp/verdict.json", "utf8"));
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `verdict=${v.verdict}\n`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `reason=${v.reason}\n`);
+          '
+
+      - name: Merge on pass
+        if: steps.verify.outputs.verdict == 'pass'
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          # Explicit subject/body: the default squash subject is the PR title,
+          # which is submitter-controlled text and does not belong in history.
+          gh pr merge "$PR_NUMBER" --squash --repo "${{ github.repository }}" \
+            --subject "solvers: add verified entry (#${PR_NUMBER})" --body ""
+
+      - name: Rebuild leaderboard after merge
+        if: steps.verify.outputs.verdict == 'pass'
+        run: |
+          git pull --ff-only
+          node .github/scripts/leaderboard.js
+          if git diff --quiet -- README.md; then
+            echo "README.md unchanged — nothing to commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: update leaderboard from SOLVERS.md"
+          git push
+
+      - name: Comment and close on fail
+        if: steps.verify.outputs.verdict == 'fail'
+        env:
+          REASON: ${{ steps.verify.outputs.reason }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          {
+            echo "Automated verification did not accept this pull request."
+            echo ""
+            echo "Reason: ${REASON}"
+            echo ""
+            echo "See https://llmspace.github.io/theta-auth/ for how to generate a valid entry, then open a new PR."
+          } > /tmp/comment-body.txt
+          gh pr comment "$PR_NUMBER" --repo "${{ github.repository }}" --body-file /tmp/comment-body.txt
+          gh pr close "$PR_NUMBER" --repo "${{ github.repository }}"

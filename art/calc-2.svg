@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="228" height="360" viewBox="0 0 228 360" role="img" aria-label="Calculator # 2">
+  <g transform="translate(6,0)">
+    <rect x="2" y="2" width="212" height="28" rx="5" fill="#ffcc00"/>
+    <text x="108" y="16" fill="#202020" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">Calculator # 2</text>
+  </g>
+  <g transform="translate(6,32)">
+    <rect x="2" y="2" width="212" height="36" rx="5" fill="#444"/>
+    <text x="204" y="20" fill="#ff6b6b" font-family="monospace"
+          font-size="15" text-anchor="end" dominant-baseline="central">AUTH REQUIRED</text>
+  </g>
+  <g transform="translate(6,72)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">7</text>
+  </g>
+  <g transform="translate(60,72)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">8</text>
+  </g>
+  <g transform="translate(114,72)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">9</text>
+  </g>
+  <g transform="translate(168,72)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">÷</text>
+  </g>
+  <g transform="translate(6,108)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">4</text>
+  </g>
+  <g transform="translate(60,108)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">5</text>
+  </g>
+  <g transform="translate(114,108)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">6</text>
+  </g>
+  <g transform="translate(168,108)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">x</text>
+  </g>
+  <g transform="translate(6,144)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">1</text>
+  </g>
+  <g transform="translate(60,144)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">2</text>
+  </g>
+  <g transform="translate(114,144)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">3</text>
+  </g>
+  <g transform="translate(168,144)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">−</text>
+  </g>
+  <g transform="translate(6,180)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">0</text>
+  </g>
+  <g transform="translate(60,180)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">.</text>
+  </g>
+  <g transform="translate(114,180)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">=</text>
+  </g>
+  <g transform="translate(168,180)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">+</text>
+  </g>
+  <g transform="translate(6,216)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">AC</text>
+  </g>
+  <g transform="translate(60,216)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">SIN</text>
+  </g>
+  <g transform="translate(114,216)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">COS</text>
+  </g>
+  <g transform="translate(168,216)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">TAN</text>
+  </g>
+  <g transform="translate(6,252)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">LOG</text>
+  </g>
+  <g transform="translate(60,252)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="12" text-anchor="middle" dominant-baseline="central">ASIN</text>
+  </g>
+  <g transform="translate(114,252)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="12" text-anchor="middle" dominant-baseline="central">ACOS</text>
+  </g>
+  <g transform="translate(168,252)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="12" text-anchor="middle" dominant-baseline="central">ATAN</text>
+  </g>
+  <g transform="translate(6,288)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">LN</text>
+  </g>
+  <g transform="translate(60,288)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="12" text-anchor="middle" dominant-baseline="central">SQRT</text>
+  </g>
+  <g transform="translate(114,288)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">ABS</text>
+  </g>
+  <g transform="translate(168,288)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="13" text-anchor="middle" dominant-baseline="central">EXP</text>
+  </g>
+  <g transform="translate(6,324)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">^</text>
+  </g>
+  <g transform="translate(60,324)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">(</text>
+  </g>
+  <g transform="translate(114,324)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">)</text>
+  </g>
+  <g transform="translate(168,324)">
+    <rect x="2" y="2" width="50" height="32" rx="5" fill="#555"/>
+    <text x="27" y="18" fill="#fff" font-family="Arial, Helvetica, sans-serif"
+          font-size="15" text-anchor="middle" dominant-baseline="central">←</text>
+  </g>
+</svg>
