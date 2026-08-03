@@ -101,10 +101,11 @@ There's no oracle, because there's nothing to ask: no server is contacted, no an
 is stored, and nothing in the repository can check a guess more cheaply than the gate
 itself.
 
-Brute force is bounded by precision rather than by iteration count. Twelve decimals
-across 0 to 2π is 6.3 × 10¹² candidates, which at this iteration count is roughly
-twelve GPU-years. Six decimals is 6.3 × 10⁶ — about two minutes. That asymmetry is
-why gate 1 is a hint and gate 2 is the prize.
+Brute force is bounded by precision rather than by iteration count. The riddle
+already tells you the root lies between 1 and 2, so twelve decimals is 10¹²
+candidates — roughly two GPU-years at this iteration count. Six decimals is 10⁶ —
+about twenty seconds. That asymmetry is why gate 1 is a hint and gate 2 is the
+prize.
 
 </details>
 
