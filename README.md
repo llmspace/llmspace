@@ -17,7 +17,7 @@
 -->
 
 <div align="center">
-<a href="https://github.com/llmspace/llmspace/blob/main/SOLVERS.md"><img src="art/marquee.svg" alt="Leaderboard" width="830" height="130"></a>
+<a href="#"><img src="art/marquee.svg" alt="Leaderboard" width="830" height="130"></a>
 </div>
 
 <!-- LEADERBOARD:START -->
