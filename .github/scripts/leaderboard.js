@@ -63,27 +63,44 @@ function parseRows(md) {
 const rows = parseRows(solvers);
 
 // ---- render ------------------------------------------------------------------
+// Arcade design contract — see "LEADERBOARD POPULATED-STATE CONTRACT (for W2)" in
+// build/_local/art.js. Empty state must stay byte-identical to what art.js writes
+// (a leaderboard run on an untouched board is a no-op); populated state is a
+// markdown table at document top level (not wrapped in <div>) with medal <img>
+// icons for the top 3 ranks.
+
+const SOLVERS_URL = 'https://github.com/llmspace/llmspace/blob/main/SOLVERS.md';
+const BOARD_W = 830, BOARD_H = 96;
+const GITHUB_USERNAME_RE = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/;
 
 const esc = s => s.replace(/\|/g, '\\|');
 
 let block;
 if (rows.length === 0) {
     block = [
-        '### Solvers',
-        '',
-        '*Nobody has opened gate 2 yet.*',
+        '<div align="center">',
+        `<a href="${SOLVERS_URL}"><img src="art/board-empty.svg" alt="No solvers yet — insert θ to continue" width="${BOARD_W}" height="${BOARD_H}"></a>`,
+        '<br>',
+        `<sub>top 10 shown · full hall of fame in <a href="${SOLVERS_URL}">SOLVERS.md</a></sub>`,
+        '</div>',
     ].join('\n');
 } else {
     const shown = rows.slice(0, MAX_SHOWN);
+    const rankCell = (r, i) => {
+        const rank = i + 1;
+        if (rank <= 3) return `<img src="art/rank-${rank}.svg" width="18" height="18">`;
+        return r.num || String(rank);
+    };
+    const solverCell = r => GITHUB_USERNAME_RE.test(r.who)
+        ? `[${esc(r.who)}](https://github.com/${r.who})`
+        : esc(r.who);
     const lines = [
-        `### Solvers &nbsp;·&nbsp; ${rows.length}`,
-        '',
-        '| # | who | method | date |',
-        '|---|-----|--------|------|',
-        ...shown.map((r, i) => `| ${r.num || i + 1} | ${esc(r.who)} | ${esc(r.method)} | ${esc(r.date)} |`),
+        '| # | solver | method | date |',
+        '| --- | --- | --- | --- |',
+        ...shown.map((r, i) => `| ${rankCell(r, i)} | ${solverCell(r)} | ${esc(r.method)} | ${esc(r.date)} |`),
     ];
     if (rows.length > shown.length) {
-        lines.push('', `<sub>and ${rows.length - shown.length} more in [SOLVERS.md](SOLVERS.md)</sub>`);
+        lines.push('', `<sub>…and ${rows.length - shown.length} more in [SOLVERS.md](SOLVERS.md)</sub>`);
     }
     block = lines.join('\n');
 }

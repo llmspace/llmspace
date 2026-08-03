@@ -17,8 +17,24 @@
 -->
 
 <div align="center">
+<a href="https://github.com/llmspace/llmspace/blob/main/SOLVERS.md"><img src="art/marquee.svg" alt="Leaderboard" width="830" height="130"></a>
+</div>
 
-# θ
+<!-- LEADERBOARD:START -->
+<div align="center">
+<a href="https://github.com/llmspace/llmspace/blob/main/SOLVERS.md"><img src="art/board-empty.svg" alt="No solvers yet — insert θ to continue" width="830" height="96"></a>
+<br>
+<sub>top 10 shown · full hall of fame in <a href="https://github.com/llmspace/llmspace/blob/main/SOLVERS.md">SOLVERS.md</a></sub>
+</div>
+<!-- LEADERBOARD:END -->
+
+<div align="center">
+<img src="art/div-transmission.svg" alt="incoming transmission" width="830" height="46">
+</div>
+
+<div align="center">
+
+### θ
 
 </div>
 
@@ -52,14 +68,12 @@ Everyone who opens gate 2 gets a line on the board — name, method, date, by pu
 request against [SOLVERS.md](https://github.com/llmspace/llmspace/blob/main/SOLVERS.md).
 That is the whole prize.
 
-<!-- LEADERBOARD:START -->
-### Solvers
-
-*Nobody has opened gate 2 yet.*
-<!-- LEADERBOARD:END -->
+<div align="center">
+<img src="art/div-solve.svg" alt="solve" width="830" height="46">
+</div>
 
 <div align="center">
-<a href="https://llmspace.github.io/theta-auth/"><img src="art/calc-1.svg" alt="Calculator # 1" width="228" height="360"></a><a href="https://llmspace.github.io/theta-auth/"><img src="art/calc-2.svg" alt="Calculator # 2" width="228" height="360"></a><a href="https://llmspace.github.io/theta-auth/"><img src="art/calc-3.svg" alt="Calculator # 3" width="228" height="360"></a>
+<a href="https://llmspace.github.io/theta-auth/"><img src="art/calc-1.svg" alt="CALC-1" width="228" height="360"></a><a href="https://llmspace.github.io/theta-auth/"><img src="art/calc-2.svg" alt="CALC-2" width="228" height="360"></a><a href="https://llmspace.github.io/theta-auth/"><img src="art/calc-3.svg" alt="CALC-3" width="228" height="360"></a>
 </div>
 
 <div align="center">
