@@ -22,14 +22,14 @@
 
 <!-- LEADERBOARD:START -->
 <div align="center">
-<a href="https://github.com/llmspace/llmspace/blob/main/SOLVERS.md"><img src="art/board-empty.svg" alt="No solvers yet — insert θ to continue" width="830" height="96"></a>
+<a href="#"><img src="art/board-empty.svg" alt="No solvers yet — insert θ to continue" width="830" height="96"></a>
 <br>
 <sub>top 10 shown · full hall of fame in <a href="https://github.com/llmspace/llmspace/blob/main/SOLVERS.md">SOLVERS.md</a></sub>
 </div>
 <!-- LEADERBOARD:END -->
 
 <div align="center">
-<img src="art/div-transmission.svg" alt="incoming transmission" width="830" height="46">
+<a href="#"><img src="art/div-transmission.svg" alt="incoming transmission" width="830" height="46"></a>
 </div>
 
 <div align="center">
@@ -69,7 +69,7 @@ request against [SOLVERS.md](https://github.com/llmspace/llmspace/blob/main/SOLV
 That is the whole prize.
 
 <div align="center">
-<img src="art/div-solve.svg" alt="solve" width="830" height="46">
+<a href="#"><img src="art/div-solve.svg" alt="solve" width="830" height="46"></a>
 </div>
 
 <div align="center">

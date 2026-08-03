@@ -79,7 +79,7 @@ let block;
 if (rows.length === 0) {
     block = [
         '<div align="center">',
-        `<a href="${SOLVERS_URL}"><img src="art/board-empty.svg" alt="No solvers yet — insert θ to continue" width="${BOARD_W}" height="${BOARD_H}"></a>`,
+        `<a href="#"><img src="art/board-empty.svg" alt="No solvers yet — insert θ to continue" width="${BOARD_W}" height="${BOARD_H}"></a>`,
         '<br>',
         `<sub>top 10 shown · full hall of fame in <a href="${SOLVERS_URL}">SOLVERS.md</a></sub>`,
         '</div>',
