@@ -22,6 +22,7 @@ proof is generated. Merging happens automatically once your PR verifies.
 | # | who | method | date | proof |
 |---|-----|--------|------|-------|
 | — | *nobody yet* | | | |
+|  | llmspace | bisection (200 iterations) | 2026-09-07 | SnX9OVnjLmOwAE0Mpf7GADYgpZs4wS+c0cSlpF6nVM51/nfZJJpBUo4rAq258qsv/NXc8xKUTlWJPQ3PTRuUBQ== |
 
 ---
 
